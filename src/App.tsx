@@ -1,10 +1,14 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ProductsPage } from "./infraestructure/pages/Products.page";
 
 function App() {
 
+ const queryClient = new QueryClient();
+ 
   return (
-    <div className="flex justify-center items-center align-middle">
-      <h1 className="text-3xl underline">hola mundo</h1>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ProductsPage/>
+    </QueryClientProvider>
   )
 }
 
